@@ -22,7 +22,7 @@ getEnviroClimateRange <- function(fish.data=NULL, path=NULL, return.range=FALSE)
   out <- ECR.pages
   
   if(return.range == TRUE) {
-    range <- sapply(enviro.lst, FUN = function(x) {
+    range <- sapply(ECR.pages, FUN = function(x) {
       lat <- data.frame(str_match_all(x, "([0-9]{1,2})°([NS])"), stringsAsFactors=F)
       if(!any(is.na(lat[1, ])) && (nrow(lat)==2 || nrow(lat)==1)) {
         lat[,2] <- as.numeric(lat[,2])
